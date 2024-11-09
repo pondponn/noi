@@ -1,0 +1,43 @@
+<?php
+// login.php
+
+session_start(); // เริ่ม session
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_management";
+
+// สร้างการเชื่อมต่อ
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // รับค่าจากฟอร์ม
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // ตรวจสอบข้อมูลในฐานข้อมูล
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();  // ดึงข้อมูลผู้ใช้จากฐานข้อมูล
+        if (password_verify($password, $row['password'])) {  // ตรวจสอบรหัสผ่านที่ผู้ใช้กรอกกับรหัสผ่านที่เข้ารหัสในฐานข้อมูล
+            // ถ้ารหัสผ่านตรงกัน
+            $_SESSION['email'] = $email; // เก็บอีเมลใน session
+            header("Location: dashboard.php"); // เปลี่ยนไปที่หน้าแดชบอร์ด
+            exit();
+        } else {
+            echo "Invalid email or password."; // ข้อความผิดพลาด
+        }
+    } else {
+        echo "Invalid email or password."; // ข้อความผิดพลาดถ้าไม่พบอีเมล
+    }
+}
+
+$conn->close();
+?>

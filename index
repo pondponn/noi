@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+    <title>NOI RESTAURANT</title>
+<body style="padding-top: 100px;">
+   <nav class="navbar navbar-expand fixed-top bg-body">
+     <div class="container justify-content-center" style="background: linear-gradient(120deg,rgb(152, 239, 126),green);">
+      <div class="d-flex flex-column">
+        <h1 class="text-center" style="color: rgba(0, 0, 0, 0.871);">NOI RESTAURANT</h1>
+        <!-- ปุ่มสำหรับเข้าสู่ระบบและสมัครสมาชิก -->
+        <button class="btn btn-outline-primary mt-3"><a href="login.php" style="color: black;">Login</a></button>
+        <button class="btn btn-outline-secondary mt-3"><a href="signup.php" style="color: black;">Sign Up</a></button>
+        </button>
+        <ul class="navbar-nav">
+          <li class="nav-item ms-2"><a class="nav-link" href="#" style="color: rgb(252, 250, 250);"> HOME</a></li>
+          <li class="nav-item ms-2"><a class="nav-link" href="#" style="color: rgb(255, 255, 255);"> ORDER</a></li>
+          <li class="nav-item ms-2"><a class="nav-link" href="#" style="color: rgb(248, 238, 238);"> RECORD</a></li>
+          <li class="nav-item ms-2"><a class="nav-link" href="#" style="color: rgb(255, 255, 255);"> BACK</a></li>
+        </ul>
+      </div>
+     </div>
+   </nav>
+   
+   <div class="container pt-5" style="background: linear-gradient(200deg,rgb(85, 196, 51),green);">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" style="height: 230px;" src="kom yum.jpg">
+          <div class="card-body">
+            <b class="card-text">ต้มยำ</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">80 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" src="kaprow muu.jpg">
+          <div class="card-body">
+            <b class="card-text">กะเพราหมูกรอบ</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">60 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" src="rice egg.jpg">
+          <div class="card-body">
+            <b class="card-text">ข้าวผัด</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">50 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" style="height: 274px;" src="egg w.jpg">
+          <div class="card-body">
+            <b class="card-text">แกงจืดเต้าหู้สาหร่าย</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">70 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" src="muu spi.jpg">
+          <div class="card-body">
+            <b class="card-text">หมูกรอบคั่วพริกเกลือ</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">65 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm"style="background: rgb(192, 253, 154);" >
+          <img class="card-img-top" src="muu paa.jpg">
+          <div class="card-body">
+            <b class="card-text">ผัดหมูป่า</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">80 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" style="height: 230px;" src="rice.jpg">
+          <div class="card-body">
+            <b class="card-text">ข้าวเปล่า</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">10 บาท/ 2 ถ้วย</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" style="height: 230px;" src="egg.jpg">
+          <div class="card-body">
+            <b class="card-text">ไข่ดาว</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">10 บาท/ 1 ฟอง</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm" style="background: rgb(192, 253, 154);">
+          <img class="card-img-top" src="drink.jpg">
+          <div class="card-body">
+            <b class="card-text">น้ำอัดลม</b>
+            <div class="d-flex justify-content-between align-items-center">
+              <small class="text-body-secondary">15 บาท</small>
+              <button type="button" class="btn btn-outline-secondary" style="background: rgb(234, 251, 178);">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+     </div>
+   </div>
+   <div class=""></div>
+</body>
+</html>

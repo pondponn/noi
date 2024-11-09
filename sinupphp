@@ -1,0 +1,44 @@
+<?php
+// signup.php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_management";
+
+// สร้างการเชื่อมต่อ
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // รับค่าจากฟอร์ม
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // เข้ารหัสรหัสผ่าน
+
+    // ตรวจสอบว่าอีเมลมีในฐานข้อมูลแล้วหรือไม่
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        echo "This email is already registered.";
+    } else {
+        // บันทึกข้อมูลในฐานข้อมูล
+        $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Sign up successful! Please log in.";
+            header("Location: login.php"); // เปลี่ยนเส้นทางไปยังหน้า login
+            exit();
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    }
+}
+
+$conn->close();
+?>
